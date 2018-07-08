@@ -10,4 +10,14 @@ node('worker_node3'){
 		stage('Build') { 
 			gbuild this, 'clean build' 
 		}
+		
+		// use local shared libary.
+		stage ('Verify') { 
+			def verifyCall = load("/root/repos/library/src/verify.groovy") 
+			
+			// get user input with timeout of 5 seconds.
+			timeout(time: 5, unit: 'SECONDS') {
+				verifyCall("Please Verify the build") 
+			}
+		} 
 }
