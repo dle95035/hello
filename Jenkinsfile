@@ -30,6 +30,7 @@ node('worker_node3'){
 		parallel linux: {
 			echo "Linux Linux"
 			sleep 7
+			echo "done Linux sleep"
         },
 		windows: {
 			echo "Windows 10 11 12"
