@@ -53,6 +53,7 @@ node('worker_node3'){
 				} 
 			}
         }
+		parallel tests
 	}
 	stage ('Notify') { 
 		
