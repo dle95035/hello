@@ -26,7 +26,16 @@ node('worker_node3'){
 	catch (err) { 
 		echo "Caught: ${err}"       
 	} 
+	stage('Test') {
+		parallel linux: {
+			echo "Linux Linux"
+        },
+		windows: {
+			echo "Windows 10 11 12"
+        }
+	}
 	stage ('Notify') { 
+		
 		//mailUser(<email address in single quotes>,"Finished") 
 		echo "==> finished."
 	} 
