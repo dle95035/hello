@@ -1,3 +1,5 @@
+#!groovy​
+
 @Library('Utilities@master')  
 import static org.conf.Utilities.* 
 node('worker_node3'){
@@ -26,7 +28,7 @@ node('worker_node3'){
 	catch (err) { 
 		echo "Caught: ${err}"       
 	} 
-	stage('Parallel Test') {
+	stage('Parallel Test 1') {
 		parallel linux: {
 			echo "Linux Linux"
 			sleep 7
