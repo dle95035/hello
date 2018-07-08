@@ -41,13 +41,13 @@ node('worker_node3'){
 		def tests = [:]
         for (def option in ["Linux", "Windows"]) {
 			if ("Linux" == "${option}") {
-				tests[${option}] = {
+				tests["${option}"] = {
 					echo "Linux Linux"
 					sleep 7
 					echo "done Linux sleep"
 				} 
 			} else {
-				tests[${option}] = {
+				tests["${option}"] = {
 					echo "Windows 10 11 12"
 					sleep 4
 				} 
