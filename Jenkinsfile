@@ -1,6 +1,8 @@
 @Library('Utilities@master')  
 import static org.conf.Utilities.* 
 node('worker_node3'){
+
+	try {
 		// get source.
 		stage('Source') { 
 			git 'https://github.com/dle95035/hello.git' 
@@ -20,4 +22,12 @@ node('worker_node3'){
 				verifyCall("Please Verify the build") 
 			}
 		} 
+	}
+	catch (err) { 
+		echo "Caught: ${err}"       
+	} 
+	stage ('Notify') { 
+		//mailUser(<email address in single quotes>,"Finished") 
+		echo "==> finished."
+	} 
 }
