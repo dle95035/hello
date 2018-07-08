@@ -29,9 +29,11 @@ node('worker_node3'){
 	stage('Test') {
 		parallel linux: {
 			echo "Linux Linux"
+			sleep 7
         },
 		windows: {
 			echo "Windows 10 11 12"
+			sleep 4
         }
 	}
 	stage ('Notify') { 
