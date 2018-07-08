@@ -37,6 +37,23 @@ node('worker_node3'){
 			sleep 4
         }
 	}
+	stage('Parallel Test 2') {
+		def tests = [:]
+        for (def option in ["Linux", "Windows"]) {
+			if ("Linux" == "${option}") {
+				tests["${option}] = {
+					echo "Linux Linux"
+					sleep 7
+					echo "done Linux sleep"
+				} 
+			} else {
+				tests["${option}] = {
+					echo "Windows 10 11 12"
+					sleep 4
+				} 
+			}
+        }
+	}
 	stage ('Notify') { 
 		
 		//mailUser(<email address in single quotes>,"Finished") 
