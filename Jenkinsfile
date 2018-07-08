@@ -26,7 +26,7 @@ node('worker_node3'){
 	catch (err) { 
 		echo "Caught: ${err}"       
 	} 
-	stage('Test') {
+	stage('Parallel Test') {
 		parallel linux: {
 			echo "Linux Linux"
 			sleep 7
