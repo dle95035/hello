@@ -2,7 +2,7 @@
 
 @Library('Utilities@master')  
 import static org.conf.Utilities.* 
-node('worker_node3'){
+node('worker_node1'){
 
 	try {
 		// get source.
